@@ -114,7 +114,7 @@ static int detecte_function(const char *pattern, unsigned int count,
     return size;
 }
 
-int stu_printf(const char *pattern, ...)
+int stu_dprintf(const char *pattern, ...)
 {
     va_list liste;
     unsigned int count;
