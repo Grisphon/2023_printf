@@ -1,5 +1,13 @@
 SRCS = 	src/print_base.c \
 	src/printf.c \
+	src/print_char.c \
+	src/print_int.c \
+	src/print_str.c \
+	src/print_perc.c \
+	src/print_x.c \
+	src/print_b.c \
+	src/print_o.c \
+	src/print_p.c \
 
 TEST = test/test_printf.c \
 
