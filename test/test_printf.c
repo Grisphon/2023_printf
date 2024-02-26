@@ -30,9 +30,15 @@ Test(stu_print, s, .init = redirect_all_std) {
 
 Test(stu_print, p) {
     char *ptr = "i will survive";
+    char *ref;
+    int refsize;
 
-    cr_assert(eq(stu_dprintf(1, "%p\n", ptr), stu_strlen(ptr) + 1));
-    printf("%p\n", ptr);
+    ref = malloc(sizeof(char) * 20);
+    refsize = snprintf(ref, 19, "%p\n", ptr);
+    cr_log_warn("%p\n", ptr);
+    cr_assert(eq(i32, stu_dprintf(1, "%p\n", ptr), refsize));
+    free(ref);
+
 }
 
 Test(stu_print, d, .init = redirect_all_std) {
