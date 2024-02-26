@@ -6,9 +6,9 @@ static void tc_putchar(char c, int fd)
     write(fd, &c, 1);
 }
 
-static int get_digit(long nb, int index, int len_base)
+static long long get_digit(long long nb, int index, int len_base)
 {
-    int result;
+    long long result;
 
     if (nb < 0)
         nb = nb * -1;
@@ -20,7 +20,7 @@ static int get_digit(long nb, int index, int len_base)
     return result;
 }
 
-static int nb_len(long nb, int len_base)
+static int nb_len(long long nb, int len_base)
 {
     int len;
 
@@ -36,7 +36,7 @@ static int nb_len(long nb, int len_base)
     return len;
 }
 
-int print_base(long nb, char *base, int fd)
+int print_base(long long nb, char *base, int fd)
 {
     int len;
     int count;
@@ -56,4 +56,3 @@ int print_base(long nb, char *base, int fd)
     }
     return count;
 }
-

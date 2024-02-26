@@ -75,7 +75,7 @@ int print_p(int fd, va_list list)
 
     pointeur = (long) va_arg(list, void *);
     write(fd, "0x", 2);
-    return print_base(pointeur, "0123456789abcdef", fd);
+    return print_base(pointeur, "0123456789abcdef", fd) + 2;
 }
 
 

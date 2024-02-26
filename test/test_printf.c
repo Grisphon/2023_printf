@@ -28,24 +28,12 @@ Test(stu_print, s, .init = redirect_all_std) {
     cr_assert_stdout_eq_str("je suis un test\n");
 }
 
-int main()
-{
-    char *caca;
+Test(stu_print, p) {
+    char *ptr = "i will survive";
 
-    caca = "caca";
-    stu_dprintf(1, "%p\n", caca);
-    printf("%p\n", caca);
-    return 0;
+    cr_assert(eq(stu_dprintf(1, "%p\n", ptr), stu_strlen(ptr) + 1));
+    printf("%p\n", ptr);
 }
-
-/*
- * Test(stu_print, p, .init = redirect_all_std) {
- *     char *ptr = "i will survive";
- * 
- *     cr_assert(eq(stu_dprintf(1, "%p\n", ptr), ?????));
- *     cr_assert_stdout_eq_str("?????\n");
- * }
- */
 
 Test(stu_print, d, .init = redirect_all_std) {
     cr_assert(eq(stu_dprintf(1, "%d\n", 100), 4));
