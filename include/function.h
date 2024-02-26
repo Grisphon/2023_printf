@@ -1,7 +1,7 @@
 #ifndef FUNCTION_
 #define FUNCTION_
 
-int print_base(int nb, char *base);
-int stu_dprintf(const char *pattern, ...);
+int print_base(long nb, char *base, int fd);
+int stu_dprintf(int fd, const char *pattern, ...);
 
 #endif

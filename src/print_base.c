@@ -1,12 +1,12 @@
 #include <unistd.h>
 #include "stu.h"
 
-static void tc_putchar(char c)
+static void tc_putchar(char c, int fd)
 {
-    write(1, &c, 1);
+    write(fd, &c, 1);
 }
 
-static int get_digit(int nb, int index, int len_base)
+static int get_digit(long nb, int index, int len_base)
 {
     int result;
 
@@ -20,7 +20,7 @@ static int get_digit(int nb, int index, int len_base)
     return result;
 }
 
-static int nb_len(int nb, int len_base)
+static int nb_len(long nb, int len_base)
 {
     int len;
 
@@ -36,7 +36,7 @@ static int nb_len(int nb, int len_base)
     return len;
 }
 
-int print_base(int nb, char *base)
+int print_base(long nb, char *base, int fd)
 {
     int len;
     int count;
@@ -47,10 +47,10 @@ int print_base(int nb, char *base)
     count = 0;
     if (nb < 0) {
         count = count + 1;
-        tc_putchar('-');
+        tc_putchar('-', fd);
     }
     while (len > 0) {
-        tc_putchar(base[get_digit(nb, len - 1, len_base)]);
+        tc_putchar(base[get_digit(nb, len - 1, len_base)], fd);
         len = len - 1;
         count = count + 1;
     }
