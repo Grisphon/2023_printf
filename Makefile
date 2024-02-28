@@ -8,6 +8,7 @@ SRCS = 	src/print_base.c \
 	src/print_b.c \
 	src/print_o.c \
 	src/print_p.c \
+	src/flag_create.c\
 
 TEST = test/test_printf.c \
 

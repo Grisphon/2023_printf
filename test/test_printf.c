@@ -52,6 +52,16 @@ Test(stu_print, mod_dec, .init = redirect_all_std) {
     cr_assert_stdout_eq_str("100\n");
 }
 
+Test(stu_print, mod_dec_signed, .init = redirect_all_std) {
+    cr_assert(eq(i32, stu_dprintf(1, "%+d\n", 100), 5));
+    cr_assert_stdout_eq_str("+100\n");
+}
+
+Test(stu_print, mod_str_signed, .init = redirect_all_std) {
+    cr_assert(eq(stu_dprintf(1, "%+s\n", "just do it"), 11));
+    cr_assert_stdout_eq_str("just do it\n");
+}
+
 Test(stu_print, mod_bin, .init = redirect_all_std) {
     cr_assert(eq(stu_dprintf(1, "%b\n", 12), 5));
     cr_assert_stdout_eq_str("1100\n");
