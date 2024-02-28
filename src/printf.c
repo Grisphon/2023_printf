@@ -18,6 +18,7 @@ const struct mod_table_row MOD_TAB[] = {
 const unsigned int MOD_TAB_LEN =
     sizeof(MOD_TAB) / sizeof(struct mod_table_row);
 
+
 static int detect_mod(int fd, const char *pattern, unsigned int count,
                       va_list list, struct flag *printf_flag)
 {
@@ -28,10 +29,9 @@ static int detect_mod(int fd, const char *pattern, unsigned int count,
 
     pathing = 1;
     mod_found = 0;
-    idx = 0;
     size = 0;
     if (pattern[count] == '%') {
-        while (mod_found == 0) {
+        while (mod_found == 0 && (count + pathing)!= '\0') {
             idx = 0;
             while (idx < MOD_TAB_LEN) {
                 if (MOD_TAB[idx].mod == pattern[count + pathing]){
