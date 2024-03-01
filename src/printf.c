@@ -31,7 +31,7 @@ static int detect_mod(int fd, const char *pattern, unsigned int count,
     mod_found = 0;
     size = 0;
     if (pattern[count] == '%') {
-        while (mod_found == 0 && (count + pathing)!= '\0') {
+        while (mod_found == 0 && pattern[count + pathing] != '\0') {
             idx = 0;
             while (idx < MOD_TAB_LEN) {
                 if (MOD_TAB[idx].mod == pattern[count + pathing]){

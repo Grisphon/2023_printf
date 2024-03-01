@@ -34,6 +34,11 @@ Test(stu_print, mod_str_dec, .init = redirect_all_std) {
     cr_assert_stdout_eq_str("Pomme 3 zdeh !\n");
 }
 
+Test(stu_print, no_mod, .init = redirect_all_std) {
+    cr_assert(eq(i32, stu_dprintf(1, "Je % heu ?\n"), 10));
+    cr_assert_stdout_eq_str("Je  heu ?\n");
+}
+
 Test(stu_print, mod_ptr) {
     char *ptr = "i will survive";
     char *ref;
