@@ -41,7 +41,7 @@ fclean: clean
 re: fclean all
 
 ut.out: $(ABJS) libstu.a
-	$(CC) -lcriterion -o ut.out $(ABJS) libstu.a
+	$(CC) -lcriterion -g -o ut.out $(ABJS) libstu.a
 
 .PHONY : all clean fclean re
 

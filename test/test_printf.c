@@ -49,7 +49,12 @@ Test(stu_print, mod_ptr) {
     cr_log_warn("%p\n", ptr);
     cr_assert(eq(i32, stu_dprintf(1, "%p\n", ptr), refsize));
     free(ref);
+}
 
+Test(stu_print, mod_ptr_null) {
+    char *ptr = NULL;
+
+    cr_assert(eq(i32, stu_dprintf(1, "%p\n", ptr), 7));
 }
 
 Test(stu_print, mod_dec, .init = redirect_all_std) {
