@@ -1,7 +1,7 @@
 # Projet printf
 
 ### Explication du projet :
-Pour ce projet, l'objectif était de reproduire la grande partie des fonctionnalités de la fonction printf de la bibliothéque standard.
+Pour ce projet, l'objectif était de reproduire une grande partie des fonctionnalités de la fonction dprintf de la bibliothèque standard.
 Voici les differents modes de fonctionnement :
 <ul>
     <li>%c pour les caractères individuels ;</li>
